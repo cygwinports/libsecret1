@@ -1,0 +1,20 @@
+--- origsrc/libsecret-0.18/libsecret/Makefile.am	2014-03-06 05:47:19.000000000 -0600
++++ src/libsecret-0.18/libsecret/Makefile.am	2015-03-18 17:04:05.471266300 -0500
+@@ -80,7 +80,7 @@ libsecret_testable_la_LIBADD = \
+ libsecret_testable_la_DEPENDENCIES = \
+ 	$(libsecret_@SECRET_MAJOR@_la_OBJECTS) \
+ 	$(libsecret_@SECRET_MAJOR@_la_DEPENDENCIES)
+-libsecret_testable_la_LDFLAGS = -rpath /force/shared
++libsecret_testable_la_LDFLAGS = -rpath /force/shared -no-undefined
+ 
+ DBUS_XML_DEFINITIONS = \
+ 	libsecret/org.freedesktop.Secrets.xml
+@@ -181,7 +181,7 @@ libmock_service_la_SOURCES = \
+ 	$(NULL)
+ 
+ libmock_service_la_LDFLAGS = \
+-	-rpath /force/shared
++	-rpath /force/shared -no-undefined
+ 
+ libmock_service_la_LIBADD = \
+ 	$(LIBGCRYPT_LIBS)
